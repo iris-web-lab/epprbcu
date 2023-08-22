@@ -1,18 +1,14 @@
 const feeds = document.getElementById("feeds");
 
 const RSS_URLS = [
-  "https://lukadjo.tumblr.com/rss",
-  "https://epprbcu.tumblr.com/rss",
-  "https://the-tutorial.tumblr.com/rss",
+  "https://cors-anywhere.herokuapp.com/https://lukadjo.tumblr.com/rss",
+  "https://cors-anywhere.herokuapp.com/https://epprbcu.tumblr.com/rss",
+  "https://cors-anywhere.herokuapp.com/https://the-tutorial.tumblr.com/rss",
 ];
 
 async function fetchFeeds() {
     const promises = RSS_URLS.map(async (url) => {
-    /*const response = await fetch(url, { mode: "no-cors", });*/
-    const response = await fetch(url, {
-          mode: "no-cors",
-          proxy: "https://cors-anywhere.herokuapp.com/",
-    });
+    const response = await fetch(url, );
     const text = await response.text();
     return new DOMParser().parseFromString(text, "text/xml");
 });
@@ -24,8 +20,7 @@ for (const feedData of feedsData) {
 
     for (const feedItem of feedItems) {
         const div = document.createElement("div");
-        div.classList.add("feed-item");
-
+        div.classList.add("feed-item")
         const img = document.createElement("img");
         img.src = feedItem.querySelector("img").src;
         div.appendChild(img);
