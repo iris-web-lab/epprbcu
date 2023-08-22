@@ -21,9 +21,12 @@ for (const feedData of feedsData) {
     for (const feedItem of feedItems) {
         const div = document.createElement("div");
         div.classList.add("feed-item")
+        
+        /*
         const img = document.createElement("img");
         img.src = feedItem.querySelector("img").src;
         div.appendChild(img);
+        */
 
         const h2 = document.createElement("h2");
         h2.textContent = feedItem.querySelector("title").textContent;
