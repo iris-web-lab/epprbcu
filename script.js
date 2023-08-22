@@ -8,7 +8,7 @@ const RSS_URLS = [
 
 async function fetchFeeds() {
     const promises = RSS_URLS.map(async (url) => {
-    const response = await fetch(url);
+    const response = await fetch(url, { mode: "no-cors", });
     const text = await response.text();
     return new DOMParser().parseFromString(text, "text/xml");
 });
