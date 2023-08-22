@@ -1,1 +1,33 @@
+body {
+margin: 0;
+padding: 0;
+font-family: sans-serif;
+}
 
+#feeds {
+width: 100%;
+max-width: 500px;
+margin: 0 auto;
+padding: 20px;
+border: 1px solid #ccc;
+}
+
+.feed-item {
+margin-bottom: 10px;
+}
+
+.feed-item img {
+width: 100px;
+height: 100px;
+float: left;
+margin-right: 10px;
+}
+
+.feed-item h2 {
+font-size: 18px;
+font-weight: bold;
+}
+
+.feed-item p {
+font-size: 16px;
+}
