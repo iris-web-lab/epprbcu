@@ -8,7 +8,11 @@ const RSS_URLS = [
 
 async function fetchFeeds() {
     const promises = RSS_URLS.map(async (url) => {
-    const response = await fetch(url, { mode: "no-cors", });
+    /*const response = await fetch(url, { mode: "no-cors", });*/
+    const response = await fetch(url, {
+          mode: "cors",
+          proxy: "https://cors-anywhere.herokuapp.com/",
+    });
     const text = await response.text();
     return new DOMParser().parseFromString(text, "text/xml");
 });
