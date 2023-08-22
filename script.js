@@ -1,9 +1,9 @@
 const feeds = document.getElementById("feeds");
 
 const RSS_URLS = [
-  "https://news.google.com/rss?hl=en&gl=US&ceid=US:en",
-  "https://www.bbc.com/news/science_and_environment/rss.xml",
-  "https://www.cnn.com/rss/edition.rss",
+  "https://lukadjo.tumblr.com/rss",
+  "https://epprbcu.tumblr.com/rss",
+  "https://the-tutorial.tumblr.com/rss",
 ];
 
 async function fetchFeeds() {
