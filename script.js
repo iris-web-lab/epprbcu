@@ -1,10 +1,8 @@
-const feedly = require('feedly');
-
 const feedUrl = 'https://blog.google/rss/';
 
-const feed = feedly.createFeed(feedUrl);
+const feed = new Nanofeed(feedUrl);
 
-feed.on('load', () => {
+feed.on('update', () => {
     const items = feed.items;
 
     const ul = document.createElement('ul');
