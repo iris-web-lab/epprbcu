@@ -1,12 +1,13 @@
 <html>
   <head>
     <title>RSS Feed Reader</title>
+    <script src="https://cdn.jsdelivr.net/npm/feedly@latest/dist/feedly.min.js"></script>
   </head>
   <body>
     <h1>RSS Feed Reader</h1>
-    <form action="index.php" method="post">
-      <input type="text" name="rss_link" placeholder="Enter RSS link">
-      <input type="submit" value="Submit">
-    </form>
+    <div id="feed"></div>
+
+    <script src="script.js"></script>
+
   </body>
 </html>
