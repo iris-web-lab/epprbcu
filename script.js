@@ -1,6 +1,6 @@
 const feedly = require('feedly');
 
-const feedUrl = 'https://www.example.com/rss.xml';
+const feedUrl = 'https://blog.google/rss/';
 
 const feed = feedly.createFeed(feedUrl);
 
