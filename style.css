@@ -1,0 +1,26 @@
+body {
+    font-family: sans-serif;
+  }
+  
+  input {
+    width: 300px;
+  }
+  
+  button {
+    background-color: #337ab7;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  

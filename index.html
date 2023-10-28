@@ -1,12 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>RSS Feed Reader</title>
-    <script src="https://www.jsdelivr.com/package/npm/nanofeed@1/dist/nanofeed.min.js"></script>
-  </head>
-  <body>
-    <h1>RSS Feed Reader</h1>
-    <div id="feed"></div>
-    <script src="script.js"></script>
-  </body>
+<html>
+<head>
+<title>RSS Feed Reader</title>
+<script>
+  var rssFeeds = [
+  {
+  "url": "https://blog.google.com/rss",
+  "title": "The Keyword"
+  },
+  {
+  "url": "https://epprbcu.tumblr.com/rss",
+  "title": "Another Example Website"
+  }
+  ];
+  
+  function loadFeeds() {
+  for (var i = 0; i < rssFeeds.length; i++) {
+  var feed = rssFeeds[i];
+  var url = feed.url;
+  var title = feed.title;
+  
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", url);
+  xhr.onload = function() {
+  var response = xhr.responseText;
+  var feedItems = JSON.parse(response);
+  
+  var ul = document.getElementById("feeds");
+  
+  for (var j = 0; j < feedItems.length; j++) {
+  var feedItem = feedItems[j];
+  
+  var li = document.createElement("li");
+  li.innerHTML = "<a href='" + feedItem.link + "'>" + feedItem.title + "</a>";
+  
+  ul.appendChild(li);
+  }
+  };
+  
+  xhr.send();
+  }
+  }
+  
+  window.onload = loadFeeds;
+  </script>
+  
+</head>
+<body>
+<h1>RSS Feed Reader</h1>
+<ul>
+<!-- This is where the RSS feed items will be displayed -->
+</ul>
+</body>
 </html>
